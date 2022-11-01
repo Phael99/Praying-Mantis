@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=2]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -38, 1, 0, 0, 0, 0, 2.5, 1, 0, 0, 0, 0, 268, 3 )
+}
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 35, 4.91269 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "Move"
+length = 3.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.99 ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+
+[node name="MovingPlatform" type="Path2D"]
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2( 268, 3 )
+offset = 305.924
+rotate = false
+
+[node name="RigidBody2D" type="KinematicBody2D" parent="PathFollow2D"]
+
+[node name="Polygon2D" type="Polygon2D" parent="PathFollow2D/RigidBody2D"]
+modulate = Color( 0.133333, 0.133333, 0.133333, 1 )
+position = Vector2( -2, 0 )
+texture_scale = Vector2( 2, 2 )
+polygon = PoolVector2Array( -36.0697, -9.82538, -36.0697, 0.174616, 33.9303, 0.174616, 33.9303, -9.82538 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/RigidBody2D"]
+position = Vector2( -3.0697, -4.91269 )
+shape = SubResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Move"
+playback_process_mode = 0
+anims/Move = SubResource( 3 )
+anims/RESET = SubResource( 4 )

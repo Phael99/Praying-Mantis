@@ -1,0 +1,385 @@
+[gd_scene load_steps=109 format=2]
+
+[ext_resource path="res://Assets/knight/Colour2/Outline/120x80_PNGSheets/_Idle.png" type="Texture" id=1]
+[ext_resource path="res://scripts/Player/Player.gd" type="Script" id=2]
+[ext_resource path="res://Assets/knight/Colour2/Outline/120x80_PNGSheets/_Run.png" type="Texture" id=3]
+[ext_resource path="res://Assets/knight/Colour1/Outline/120x80_PNGSheets/_Jump.png" type="Texture" id=4]
+[ext_resource path="res://Assets/knight/Colour1/Outline/120x80_PNGSheets/_Fall.png" type="Texture" id=5]
+[ext_resource path="res://Assets/knight/Colour1/Outline/120x80_PNGSheets/_Attack.png" type="Texture" id=6]
+[ext_resource path="res://Assets/knight/Colour1/Outline/120x80_PNGSheets/_SlideFull.png" type="Texture" id=7]
+[ext_resource path="res://Assets/knight/Colour2/Outline/120x80_PNGSheets/_Death.png" type="Texture" id=8]
+[ext_resource path="res://Assets/knight/Colour2/Outline/120x80_PNGSheets/_Hit.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_33.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_30.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_36.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_45.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_24.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_29.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_32.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_35.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_31.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_27.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_39.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_41.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_42.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_43.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_44.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_34.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_46.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_47.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_26.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_37.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_25.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_28.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_50.png" type="Texture" id=32]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_38.png" type="Texture" id=33]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_40.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_48.png" type="Texture" id=35]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_49.png" type="Texture" id=36]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_08.png" type="Texture" id=37]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_12.png" type="Texture" id=38]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_20.png" type="Texture" id=39]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_04.png" type="Texture" id=40]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_05.png" type="Texture" id=41]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_06.png" type="Texture" id=42]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_18.png" type="Texture" id=43]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_02.png" type="Texture" id=44]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_07.png" type="Texture" id=45]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_10.png" type="Texture" id=46]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_03.png" type="Texture" id=47]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_09.png" type="Texture" id=48]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_11.png" type="Texture" id=49]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_14.png" type="Texture" id=50]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_15.png" type="Texture" id=51]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_16.png" type="Texture" id=52]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_19.png" type="Texture" id=53]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_17.png" type="Texture" id=54]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_13.png" type="Texture" id=55]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_21.png" type="Texture" id=56]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_01.png" type="Texture" id=57]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_22.png" type="Texture" id=58]
+[ext_resource path="res://Assets/Player/ociosa/Armature_ociosa_23.png" type="Texture" id=60]
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 10, 19 )
+
+[sub_resource type="RectangleShape2D" id=33]
+extents = Vector2( 15.5, 19.75 )
+
+[sub_resource type="AtlasTexture" id=29]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=30]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 120, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=31]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 240, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=32]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 360, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=34]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=35]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 120, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=36]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 240, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=37]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 360, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=38]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=39]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 120, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=40]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 240, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=41]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 360, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=42]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 480, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=43]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 600, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=44]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 720, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=45]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 840, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=46]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 960, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=47]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 1080, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 120, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=28]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 240, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=48]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=60]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=61]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 120, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=62]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 240, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=63]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 360, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=64]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 480, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=65]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 600, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=66]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 720, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=67]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 840, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=68]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 960, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=69]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 1080, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=24]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 120, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=25]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 240, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=50]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=51]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 120, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=52]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 240, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=53]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 360, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=54]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 480, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=55]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 600, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=56]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 720, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=57]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 840, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=58]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 960, 0, 120, 80 )
+
+[sub_resource type="AtlasTexture" id=59]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 1080, 0, 120, 80 )
+
+[sub_resource type="SpriteFrames" id=11]
+animations = [ {
+"frames": [ SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ) ],
+"loop": true,
+"name": "Attack",
+"speed": 12.0
+}, {
+"frames": [ SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ) ],
+"loop": true,
+"name": "Dash",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ) ],
+"loop": false,
+"name": "Death",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 26 ), SubResource( 27 ), SubResource( 28 ) ],
+"loop": true,
+"name": "Fall",
+"speed": 12.0
+}, {
+"frames": [ SubResource( 48 ) ],
+"loop": false,
+"name": "Hurt",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 12.0
+}, {
+"frames": [ null, ExtResource( 57 ), ExtResource( 44 ), ExtResource( 47 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 45 ), ExtResource( 37 ), ExtResource( 48 ), ExtResource( 46 ), ExtResource( 49 ), ExtResource( 38 ), ExtResource( 55 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 54 ), ExtResource( 43 ), ExtResource( 53 ), ExtResource( 39 ), ExtResource( 56 ), ExtResource( 58 ), ExtResource( 60 ), ExtResource( 14 ), ExtResource( 30 ), ExtResource( 28 ), ExtResource( 19 ), ExtResource( 31 ), ExtResource( 15 ), ExtResource( 11 ), ExtResource( 18 ), ExtResource( 16 ), ExtResource( 10 ), ExtResource( 25 ), ExtResource( 17 ), ExtResource( 12 ), ExtResource( 29 ), ExtResource( 33 ), ExtResource( 20 ), ExtResource( 34 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 13 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 32 ) ],
+"loop": true,
+"name": "Idle2",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 23 ), SubResource( 24 ), SubResource( 25 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 12.0
+}, {
+"frames": [ SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ) ],
+"loop": true,
+"name": "Run",
+"speed": 12.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=49]
+extents = Vector2( 10, 1 )
+
+[node name="Player" type="KinematicBody2D"]
+scale = Vector2( 2, 2 )
+collision_layer = 2
+collision_mask = 11
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -18.5 )
+shape = SubResource( 12 )
+
+[node name="AttackCollision" type="Area2D" parent="." groups=["Sword"]]
+position = Vector2( 10, -21.5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackCollision"]
+position = Vector2( 37, 2 )
+shape = SubResource( 33 )
+disabled = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 5, -39.5 )
+frames = SubResource( 11 )
+animation = "Idle"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 0, -21.5 )
+current = true
+
+[node name="Invunarability" type="Timer" parent="."]
+
+[node name="DashTimer" type="Timer" parent="."]
+
+[node name="MagicCooldown" type="Timer" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -0.5 )
+shape = SubResource( 49 )
+
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
+[connection signal="timeout" from="Invunarability" to="." method="_on_Invunarability_timeout"]
+[connection signal="timeout" from="DashTimer" to="." method="_on_DashTimer_timeout"]
+[connection signal="timeout" from="MagicCooldown" to="." method="_on_MagicCooldown_timeout"]

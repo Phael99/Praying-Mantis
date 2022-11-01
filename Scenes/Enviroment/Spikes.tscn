@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Forest_tile.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/HitBox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/Enviroment/Spikes.gd" type="Script" id=3]
+
+[node name="HitBox" instance=ExtResource( 2 )]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 558.616, 396.963, 80, 80 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+polygon = PoolVector2Array( -40, 41, -29, -29, -19, 28, -9, -29, 0, 28, 10, -30, 21, 28, 30, -30, 40, 39 )
+
+[connection signal="area_entered" from="." to="." method="_on_HitBox_area_entered"]

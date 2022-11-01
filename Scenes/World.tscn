@@ -1,0 +1,85 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Scenes/TileMap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Mantis/Mantis.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/HUD/HUD.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/World.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Background.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Enemies/Boar Enemy.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Player/DashPowerUp.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Enemies/FlyingEnemy.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Player/MagicPowerUp.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Enviroment/Spikes.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/CheckPoint.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Enviroment/MovingPlatform.tscn" type="PackedScene" id=13]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -10, 33, 0, 0, 0, 0, -10, -95 )
+}
+
+[node name="World" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="HUD" parent="." instance=ExtResource( 4 )]
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( -139, 431 )
+z_index = 1
+
+[node name="Mantis" parent="." instance=ExtResource( 3 )]
+position = Vector2( -191, 420 )
+
+[node name="TileMap" parent="." instance=ExtResource( 1 )]
+tile_data = PoolIntArray( 327701, 1, 262146, 327702, 1, 262147, 327703, 1, 262147, 327704, 1, 262147, 327705, 1, 262147, 327706, 1, 262147, 327707, 1, 262147, 327708, 1, 262147, 327709, 1, 262147, 327710, 1, 262147, 327711, 1, 262147, 327712, 1, 262147, 327713, 1, 262147, 327714, 1, 262147, 327715, 1, 262147, 327716, 1, 262147, 327717, 1, 262147, 327718, 1, 262147, 327719, 1, 262147, 327720, 1, 262147, 327721, 1, 262147, 327722, 1, 131078, 393219, 1, 262146, 393220, 1, 262147, 393221, 1, 262147, 393222, 1, 262147, 393223, 1, 262147, 393224, 1, 262147, 393225, 1, 262147, 393226, 1, 262147, 393227, 1, 262148, 655384, 1, 0, 655385, 1, 0, 655402, 1, 0, 655403, 1, 2, 786426, 1, 0, 786427, 1, 1, 786428, 1, 1, 786429, 1, 1, 786430, 1, 1, 786431, 1, 1, 720896, 1, 1, 720897, 1, 1, 720898, 1, 1, 720899, 1, 1, 720900, 1, 1, 720901, 1, 1, 720902, 1, 1, 720903, 1, 1, 720904, 1, 1, 720905, 1, 1, 720906, 1, 1, 720907, 1, 1, 720908, 1, 1, 720909, 1, 1, 720910, 1, 1, 720911, 1, 1, 720912, 1, 1, 720913, 1, 1, 720914, 1, 1, 720915, 1, 1, 720916, 1, 2, 720920, 1, 65536, 720921, 1, 0, 720922, 1, 0, 720923, 1, 1, 720924, 1, 1, 720925, 1, 1, 720926, 1, 1, 720927, 1, 1, 720928, 1, 1, 720929, 1, 1, 720930, 1, 1, 720931, 1, 1, 720932, 1, 1, 720933, 1, 1, 720934, 1, 1, 720935, 1, 1, 720936, 1, 1, 720937, 1, 0, 720938, 1, 0, 720939, 1, 65538, 851962, 1, 65536, 851963, 1, 65537, 851964, 1, 65537, 851965, 1, 65537, 851966, 1, 65537, 851967, 1, 65537, 786432, 1, 65537, 786433, 1, 65537, 786434, 1, 65537, 786435, 1, 65537, 786436, 1, 65537, 786437, 1, 65537, 786438, 1, 65537, 786439, 1, 65537, 786440, 1, 65537, 786441, 1, 65537, 786442, 1, 65537, 786443, 1, 65537, 786444, 1, 65537, 786445, 1, 65537, 786446, 1, 65537, 786447, 1, 65537, 786448, 1, 65537, 786449, 1, 65537, 786450, 1, 65537, 786451, 1, 65537, 786452, 1, 65538, 786456, 1, 65536, 786457, 1, 65537, 786458, 1, 65537, 786459, 1, 65537, 786460, 1, 65537, 786461, 1, 65537, 786462, 1, 65537, 786463, 1, 65537, 786464, 1, 65537, 786465, 1, 65537, 786466, 1, 65537, 786467, 1, 65537, 786468, 1, 65537, 786469, 1, 65537, 786470, 1, 65537, 786471, 1, 65537, 786472, 1, 65537, 786473, 1, 65537, 786474, 1, 65537, 786475, 1, 65538, 917498, 1, 65536, 917499, 1, 65537, 917500, 1, 65537, 917501, 1, 65537, 917502, 1, 65537, 917503, 1, 65537, 851968, 1, 65537, 851969, 1, 65537, 851970, 1, 65537, 851971, 1, 65537, 851972, 1, 65537, 851973, 1, 65537, 851974, 1, 65537, 851975, 1, 65537, 851976, 1, 65537, 851977, 1, 65537, 851978, 1, 65537, 851979, 1, 65537, 851980, 1, 65537, 851981, 1, 65537, 851982, 1, 65537, 851983, 1, 65537, 851984, 1, 65537, 851985, 1, 65537, 851986, 1, 65537, 851987, 1, 65537, 851988, 1, 0, 851992, 1, 0, 851993, 1, 65537, 851994, 1, 65537, 851995, 1, 65537, 851996, 1, 65537, 851997, 1, 65537, 851998, 1, 65537, 851999, 1, 65537, 852000, 1, 65537, 852001, 1, 65537, 852002, 1, 65537, 852003, 1, 65537, 852004, 1, 65537, 852005, 1, 65537, 852006, 1, 65537, 852007, 1, 65537, 852008, 1, 65537, 852009, 1, 65537, 852010, 1, 65537, 852011, 1, 65538, 983034, 1, 131072, 983035, 1, 131073, 983036, 1, 131073, 983037, 1, 131073, 983038, 1, 131073, 983039, 1, 131073, 917504, 1, 131073, 917505, 1, 131073, 917506, 1, 131073, 917507, 1, 131073, 917508, 1, 131073, 917509, 1, 131073, 917510, 1, 131073, 917511, 1, 131073, 917512, 1, 131073, 917513, 1, 131073, 917514, 1, 131073, 917515, 1, 131073, 917516, 1, 131073, 917517, 1, 131073, 917518, 1, 131073, 917519, 1, 131073, 917520, 1, 131073, 917521, 1, 131073, 917522, 1, 131073, 917523, 1, 131073, 917524, 1, 0, 917525, 1, 0, 917526, 1, 262147, 917527, 1, 0, 917528, 1, 0, 917529, 1, 131073, 917530, 1, 131073, 917531, 1, 131073, 917532, 1, 131073, 917533, 1, 131073, 917534, 1, 131073, 917535, 1, 131073, 917536, 1, 131073, 917537, 1, 131073, 917538, 1, 131073, 917539, 1, 131073, 917540, 1, 131073, 917541, 1, 131073, 917542, 1, 131073, 917543, 1, 131073, 917544, 1, 131073, 917545, 1, 131073, 917546, 1, 131073, 917547, 1, 131074 )
+
+[node name="Boar Enemy" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1459, 408 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1582, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 518, 210 )
+scale = Vector2( 4.70963, 4.70964 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Path2D" parent="." instance=ExtResource( 8 )]
+position = Vector2( 693, 397 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="FlyingEnemy" parent="." instance=ExtResource( 9 )]
+position = Vector2( 661, 95 )
+
+[node name="MagicPowerUp" parent="." instance=ExtResource( 10 )]
+position = Vector2( 196, 191 )
+
+[node name="HitBox" parent="." instance=ExtResource( 11 )]
+position = Vector2( 858, 545 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="HitBox2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 899, 545 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="HitBox3" parent="." instance=ExtResource( 11 )]
+position = Vector2( 940, 545 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="CheckPoint" parent="." instance=ExtResource( 12 )]
+position = Vector2( 818, 443 )
+
+[node name="MovingPlatform" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1815, 433 )
+
+[node name="MovingPlatform2" parent="." instance=ExtResource( 13 )]
+position = Vector2( 2137, 401 )
+curve = SubResource( 1 )
