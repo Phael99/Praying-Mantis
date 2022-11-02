@@ -48,13 +48,14 @@ onready var attackCollision = $AttackCollision/CollisionShape2D
 func _ready():
 	animatedSprite.play("Idle")
 	emit_signal("show_health", current_health)
+	PowerUpHandler.player_health = current_health
 
 
 
 func _process(delta):
 	emit_signal("show_health", current_health)
 	Global.player_position = position
-	
+	PowerUpHandler.player_health = current_health
 	
 	if not is_dashing:
 		apply_gravity()
@@ -155,6 +156,7 @@ func handle_dash(amount):
 		can_dash = false
 		dashTimer.start(0.3)
 		dash_direction = dash()
+		disable_bit(collision_mask, 5)
 	
 	if is_dashing:
 		animatedSprite.play("Dash")
@@ -173,6 +175,7 @@ func dash() -> Vector2:
 
 func hurt():
 	if not invunerability:
+		is_attacking = false
 		SoundPlayer.play_sound(SoundPlayer.HURT)
 		animatedSprite.play("Hurt")
 		current_health-=1
@@ -191,6 +194,7 @@ func _on_AnimatedSprite_animation_finished():
 		is_attacking = false
 	if animatedSprite.animation == "Dash":
 		is_dashing = false
+		enable_bit(collision_mask, 5)
 		velocity.x = move_toward(velocity.x, 0, 1200)
 	if animatedSprite.animation == "Hurt":
 		animatedSprite.play("Idle")
@@ -231,3 +235,9 @@ func use_magic():
 func _on_MagicCooldown_timeout():
 	can_use_magic = true
 	magicCooldown.stop()
+
+func enable_bit(mask: int, index: int) -> int:
+	return mask | (1 << index)
+
+func disable_bit(mask: int, index: int) -> int:
+	return mask & ~(1 << index)

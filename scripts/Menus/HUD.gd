@@ -4,13 +4,13 @@ var game_paused = false
 var health = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	show_health()
 
 
 
 func _process(delta):
 	show_health()
-	
+	health = PowerUpHandler.player_health
 
 
 
@@ -34,5 +34,5 @@ func show_health():
 		$HealthBar.visible = false
 
 
-func _on_Player_show_health(life):
-	health = life
+#func _on_Player_show_health(life):
+#	health = life

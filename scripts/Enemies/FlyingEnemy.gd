@@ -22,8 +22,8 @@ func _ready():
 func _process(delta):
 	locate_player()
 	flip_to_player()
-	#if can_throw:
-	#	throw_feather()
+	if can_throw:
+		throw_feather()
 
 
 func _on_Area2D_area_entered(area):
@@ -68,7 +68,7 @@ func _on_Area2D_body_entered(body):
 func throw_feather():
 	var feather = FEATHER.instance()
 	get_tree().current_scene.add_child(feather)
-	feather.direction = Vector2((position.x / $".".get_parent().get_child(1).position.x) * player_position.x, player_position.y)
+	feather.direction = position.direction_to(Global.player_position)
 	feather.global_position = self.global_position
 	featherCooldown.start(3)
 	can_throw = false 

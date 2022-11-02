@@ -98,15 +98,16 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=13]
-extents = Vector2( 16, 13 )
+extents = Vector2( 8.75, 2 )
 
 [sub_resource type="CapsuleShape2D" id=21]
 radius = 41.0
 height = 92.0
 
-[node name="BoarEnemy" type="KinematicBody2D" groups=["Enemy"]]
+[node name="BoarEnemy" type="KinematicBody2D"]
 scale = Vector2( 2, 2 )
 collision_layer = 4
+collision_mask = 3
 script = ExtResource( 3 )
 
 [node name="HitBox" parent="." groups=["Enemy"] instance=ExtResource( 5 )]
@@ -122,18 +123,18 @@ frame = 5
 playing = true
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
-position = Vector2( -3, 3 )
+position = Vector2( -0.75, 14 )
 shape = SubResource( 13 )
 
 [node name="LedgeCheckL" type="RayCast2D" parent="."]
 position = Vector2( -18.5, 10 )
 enabled = true
-cast_to = Vector2( -2, 10 )
+cast_to = Vector2( -1.5, 9.5 )
 
 [node name="LedheCheckR" type="RayCast2D" parent="."]
 position = Vector2( 12, 10 )
 enabled = true
-cast_to = Vector2( 3, 9 )
+cast_to = Vector2( 1.5, 9 )
 
 [node name="DetectPlayer" type="Area2D" parent="."]
 

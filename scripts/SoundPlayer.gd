@@ -2,6 +2,7 @@ extends Node
 
 const MAIN_MENU = preload("res://Audio/Music/MainMenu.wav")
 const PHASE1 = preload("res://Audio/Music/Phase1.ogg")
+const BOAR_BOSS = preload("res://Audio/Music/BoarBoss.wav")
 
 const HURT = preload("res://Audio/Sfx/Hurt.wav")
 const JUMP = preload("res://Audio/Sfx/Jump.wav")
@@ -34,3 +35,8 @@ func stop_music(sound):
 		if musicStreamPlayer.stream == sound:
 			musicStreamPlayer.stop()
 			break
+
+func stop_any_music():
+	for musicStreamPlayer in musicPlayers.get_children():
+		if musicStreamPlayer.playing:
+			musicStreamPlayer.stop()

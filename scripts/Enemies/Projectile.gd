@@ -6,7 +6,7 @@ var direction = Vector2.RIGHT
 
 
 func _ready():
-	timer.start(1)
+	timer.start(3)
 
 func _process(delta):
 	global_position += SPEED * direction * delta

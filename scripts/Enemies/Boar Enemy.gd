@@ -3,7 +3,7 @@ extends KinematicBody2D
 enum{ROAM, LURE, STAGGER}
 var state = ROAM
 
-onready var enemy_pos = $".".position.x
+
 onready var animated_sprite = $AnimatedSprite
 onready var ledge_check_r = $LedheCheckR
 onready var ledge_check_l = $LedgeCheckL
@@ -30,8 +30,15 @@ func _process(delta):
 	
 	locate_player()
 	
+	if found_wall or found_ledge:
+			direction *= -1
+			$DetectPlayer.scale *= -1
+			animated_sprite.flip_h = direction.x > 0
 	
 	if is_on_floor():
+		
+		
+		
 		match state:
 			ROAM:
 				velocity = direction * 50
@@ -40,10 +47,7 @@ func _process(delta):
 			STAGGER:
 				velocity = Vector2.ZERO
 		
-		if found_wall or found_ledge:
-			direction *= -1
-			$DetectPlayer.scale *= -1
-			animated_sprite.flip_h = direction.x > 0
+		
 	else:
 		apply_gravity()
 	
