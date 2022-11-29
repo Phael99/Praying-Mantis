@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Font/PixelOperator.ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[node name="DashTxt" type="Panel"]
+modulate = Color( 1, 1, 1, 0.839216 )
+margin_left = 4790.0
+margin_top = 300.0
+margin_right = 4893.0
+margin_bottom = 340.0
+theme = SubResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "Aperte 's' ou 'B' 
+para usar Dash"

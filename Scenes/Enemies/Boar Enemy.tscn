@@ -101,8 +101,8 @@ animations = [ {
 extents = Vector2( 8.75, 2 )
 
 [sub_resource type="CapsuleShape2D" id=21]
-radius = 41.0
-height = 92.0
+radius = 27.9998
+height = 90.0003
 
 [node name="BoarEnemy" type="KinematicBody2D"]
 scale = Vector2( 2, 2 )
@@ -119,7 +119,7 @@ shape = SubResource( 22 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 12 )
 animation = "Walk"
-frame = 5
+frame = 4
 playing = true
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
@@ -139,7 +139,7 @@ cast_to = Vector2( 1.5, 9 )
 [node name="DetectPlayer" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectPlayer"]
-position = Vector2( -71.5, 2.5 )
+position = Vector2( -71, 2.5 )
 rotation = 1.5708
 shape = SubResource( 21 )
 

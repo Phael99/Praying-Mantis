@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/eagle/eagle-attack-1.png" type="Texture" id=1]
 [ext_resource path="res://Assets/eagle/eagle-attack-2.png" type="Texture" id=2]
@@ -24,6 +24,9 @@ animations = [ {
 "name": "Idle",
 "speed": 5.0
 } ]
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 169.027
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 15, 14 )
@@ -66,8 +69,8 @@ curve = SubResource( 1 )
 script = ExtResource( 5 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2( 0, 28 )
-offset = 51.0016
+position = Vector2( 0, -23 )
+offset = 3.8147e-05
 rotate = false
 __meta__ = {
 "_edit_lock_": true
@@ -77,8 +80,14 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="PathFollow2D/Area2D"]
 frames = SubResource( 2 )
-animation = "Hurt"
+animation = "Idle"
 playing = true
+
+[node name="CheckPlayer" type="Area2D" parent="PathFollow2D/Area2D/AnimatedSprite"]
+position = Vector2( 0, 23 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="PathFollow2D/Area2D/AnimatedSprite/CheckPlayer"]
+shape = SubResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/Area2D"]
 position = Vector2( -3, 3 )
@@ -87,6 +96,7 @@ shape = SubResource( 3 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PathFollow2D"]
 autoplay = "Flying"
 playback_process_mode = 0
+playback_speed = 0.6
 anims/Flying = SubResource( 4 )
 anims/RESET = SubResource( 5 )
 
@@ -96,5 +106,7 @@ anims/RESET = SubResource( 5 )
 
 [connection signal="area_entered" from="PathFollow2D/Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="body_entered" from="PathFollow2D/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="PathFollow2D/Area2D/AnimatedSprite/CheckPlayer" to="." method="_on_CheckPlayer_body_entered"]
+[connection signal="body_exited" from="PathFollow2D/Area2D/AnimatedSprite/CheckPlayer" to="." method="_on_CheckPlayer_body_exited"]
 [connection signal="timeout" from="Stagger" to="." method="_on_Stagger_timeout"]
 [connection signal="timeout" from="FeatherCooldown" to="." method="_on_FeatherCooldown_timeout"]

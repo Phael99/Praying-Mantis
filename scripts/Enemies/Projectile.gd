@@ -1,12 +1,13 @@
 extends KinematicBody2D
 	 
-export(int) var SPEED = 200
+export(int) var SPEED = 250
 onready var timer = $Timer 
 var direction = Vector2.RIGHT
 
 
 func _ready():
 	timer.start(3)
+	$RayCast2D.look_at(Global.player_position)
 
 func _process(delta):
 	global_position += SPEED * direction * delta

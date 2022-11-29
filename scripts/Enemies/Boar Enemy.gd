@@ -4,6 +4,8 @@ enum{ROAM, LURE, STAGGER}
 var state = ROAM
 
 
+export(PackedScene) var POTION = preload("res://Scenes/Enviroment/Potion.tscn")
+
 onready var animated_sprite = $AnimatedSprite
 onready var ledge_check_r = $LedheCheckR
 onready var ledge_check_l = $LedgeCheckL
@@ -86,6 +88,7 @@ func _on_Timer_timeout():
 	invunerability = false
 	flip_to_player()
 	if current_health<=0:
+		drop_potion()
 		queue_free()
 	
 	$Stagger.stop()
@@ -129,3 +132,10 @@ func handle_fall_death():
 	if position.y >= 1250:
 		queue_free()
 		
+
+func drop_potion():
+	var get_rand = randi() % 100 +1 
+	if get_rand <=10:
+		var potion = POTION.instance()
+		get_parent().get_tree().current_scene.add_child(potion)
+		potion.global_position = self.global_position

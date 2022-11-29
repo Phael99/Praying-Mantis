@@ -330,7 +330,7 @@ SPEED = 500
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 rotation = -1.5708
 frames = SubResource( 62 )
-frame = 15
+frame = 33
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/Enemies/BossHealth.gd" type="Script" id=1]
+[ext_resource path="res://Font/PixelOperator.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 28
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[node name="BossHealth" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 2 )
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 227.0
+margin_top = 505.0
+margin_right = 853.0
+margin_bottom = 542.0
+color = Color( 0.207843, 0.207843, 0.207843, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = 228.0
+margin_top = 506.0
+margin_right = 852.0
+margin_bottom = 540.0
+color = Color( 0.815686, 0.219608, 0.219608, 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 479.0
+margin_top = 507.0
+margin_right = 639.0
+margin_bottom = 536.0
+text = "Javali Gigante"

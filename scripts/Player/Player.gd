@@ -19,6 +19,8 @@ export(int) var ADDITIONAL_FALL_GRAVITY = 150
 export(int) var DASH_SPEED = 1500
 export(int) var DASH_ACC = 1
 export(int) var HEALTH = 3
+export(int) var MANA = 3
+export(int) var MAX_POTIONS = 3
 
 var double_jump = 1
 var invunerability = false
@@ -26,6 +28,8 @@ var is_dead = false
 var is_being_hurt = false
 
 var current_health = HEALTH
+var current_mana = MANA
+var potions = 0
 
 var is_attacking = false
 var is_walking = false
@@ -44,19 +48,17 @@ onready var animatedSprite = $AnimatedSprite
 onready var dashTimer = $DashTimer
 onready var magicCooldown = $MagicCooldown
 onready var attackCollision = $AttackCollision/CollisionShape2D
+onready var remoteTransform = $RemoteTransform2D
 
 func _ready():
 	animatedSprite.play("Idle")
-	emit_signal("show_health", current_health)
-	PowerUpHandler.player_health = current_health
+	set_stats()
 
 
 
 func _process(delta):
-	emit_signal("show_health", current_health)
-	Global.player_position = position
-	PowerUpHandler.player_health = current_health
-	
+	set_stats()
+	use_potion()
 	if not is_dashing:
 		apply_gravity()
 	
@@ -156,13 +158,14 @@ func handle_dash(amount):
 		can_dash = false
 		dashTimer.start(0.3)
 		dash_direction = dash()
-		disable_bit(collision_mask, 5)
 	
 	if is_dashing:
 		animatedSprite.play("Dash")
 		dash_direction = move_and_slide(dash_direction)
-		if is_being_hurt:
-			is_dashing = false
+		#if is_being_hurt:
+		#	is_dashing = false
+		invunerability = true
+		$Invunarability.start(.5)
 
 func dash() -> Vector2:
 	var input_vector: Vector2 = Vector2.ZERO
@@ -194,7 +197,6 @@ func _on_AnimatedSprite_animation_finished():
 		is_attacking = false
 	if animatedSprite.animation == "Dash":
 		is_dashing = false
-		enable_bit(collision_mask, 5)
 		velocity.x = move_toward(velocity.x, 0, 1200)
 	if animatedSprite.animation == "Hurt":
 		animatedSprite.play("Idle")
@@ -218,7 +220,7 @@ func handle_fall_death():
 
 
 func use_magic():
-	if has_magic and can_use_magic and not is_dashing and not is_attacking:
+	if has_magic and can_use_magic and not is_dashing and not is_attacking and current_mana > 0:
 		SoundPlayer.play_sound(SoundPlayer.MAGIC)
 		var magic = MAGIC.instance()
 		get_tree().current_scene.add_child(magic)
@@ -229,6 +231,7 @@ func use_magic():
 			magic.direction *= -1
 		magic.global_position = self.global_position + Vector2(20 * direction, -50)
 		magicCooldown.start(1)
+		current_mana -= 1
 		can_use_magic = false
 
 
@@ -236,8 +239,23 @@ func _on_MagicCooldown_timeout():
 	can_use_magic = true
 	magicCooldown.stop()
 
-func enable_bit(mask: int, index: int) -> int:
-	return mask | (1 << index)
+func set_stats():
+	emit_signal("show_health", current_health)
+	Global.player_position = position
+	PowerUpHandler.player_health = current_health
+	PowerUpHandler.player_mana = current_mana
+	PowerUpHandler.potions = potions
 
-func disable_bit(mask: int, index: int) -> int:
-	return mask & ~(1 << index)
+func use_potion():
+	if Input.is_action_just_pressed("Heal_potion") and potions>0:
+		if current_health < HEALTH:
+			current_health += 1
+			potions -= 1
+	if Input.is_action_just_pressed("Mana_potion") and potions>0:
+		if current_mana < MANA:
+			current_mana += 1
+			potions -= 1
+
+func connect_camera(camera):
+	var camera_path = camera.get_path()
+	remoteTransform.remote_path = camera_path

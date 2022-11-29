@@ -63,5 +63,6 @@ shape = SubResource( 2 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Move"
 playback_process_mode = 0
+playback_speed = 0.6
 anims/Move = SubResource( 3 )
 anims/RESET = SubResource( 4 )

@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/Menus/HUD.gd" type="Script" id=1]
 [ext_resource path="res://Assets/HUD.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/HUD/HealthBar.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/HUD/Pause.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/flask_big_green.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Enemies/BossHealth.tscn" type="PackedScene" id=6]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -26,4 +28,29 @@ position = Vector2( 174, 31 )
 position = Vector2( 118, 31 )
 
 [node name="Pause" parent="." instance=ExtResource( 4 )]
+visible = false
+
+[node name="ManaBar" type="ColorRect" parent="."]
+margin_left = 48.0
+margin_top = 26.0
+margin_right = 216.0
+margin_bottom = 35.0
+color = Color( 0.2, 0.611765, 0.811765, 1 )
+
+[node name="Potion1" type="Sprite" parent="."]
+visible = false
+position = Vector2( 4, 47 )
+texture = ExtResource( 5 )
+
+[node name="Potion2" type="Sprite" parent="."]
+visible = false
+position = Vector2( 23, 54 )
+texture = ExtResource( 5 )
+
+[node name="Potion3" type="Sprite" parent="."]
+visible = false
+position = Vector2( 44, 49 )
+texture = ExtResource( 5 )
+
+[node name="BossHealth" parent="." instance=ExtResource( 6 )]
 visible = false

@@ -149,11 +149,11 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=21]
-extents = Vector2( 15, 12.5 )
+extents = Vector2( 12.8333, 11.0833 )
 
 [sub_resource type="CapsuleShape2D" id=22]
 radius = 15.8333
-height = 93.0
+height = 78.0001
 
 [sub_resource type="Animation" id=27]
 resource_name = "ChargeStart"
@@ -199,11 +199,11 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 modulate = Color( 0.807843, 0.278431, 0.113725, 1 )
 frames = SubResource( 20 )
-animation = "Charge Init"
+animation = "Idle"
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -3.75, 3.5 )
+position = Vector2( -3.83333, 4.91667 )
 shape = SubResource( 21 )
 
 [node name="Stun" type="Timer" parent="."]

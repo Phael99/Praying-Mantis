@@ -11,7 +11,7 @@ func _exit_tree():
 	SoundPlayer.stop_music(SoundPlayer.MAIN_MENU)
 
 func _on_Start_pressed():
-	var _change_scene = get_tree().change_scene("res://Scenes/Stages/Demo.tscn")
+	var _change_scene = get_tree().change_scene("res://Scenes/Stages/Phase1.tscn")
 
 
 func _on_Exit_pressed():

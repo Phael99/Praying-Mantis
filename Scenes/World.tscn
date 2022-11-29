@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scenes/TileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Scenes/Enviroment/Spikes.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/CheckPoint.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Enviroment/MovingPlatform.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Enviroment/Potion.tscn" type="PackedScene" id=14]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -86,3 +87,6 @@ curve = SubResource( 1 )
 
 [node name="BoarEnemy" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1209, 167 )
+
+[node name="Potion" parent="." instance=ExtResource( 14 )]
+position = Vector2( 16, 421 )
