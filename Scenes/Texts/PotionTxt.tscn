@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Font/PixelOperator.ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[node name="PotionTxt" type="Node2D"]
+position = Vector2( 3194, 250 )
+
+[node name="PotionTxt" type="Panel" parent="."]
+modulate = Color( 1, 1, 1, 0.890196 )
+margin_right = 254.0
+margin_bottom = 56.0
+theme = SubResource( 2 )
+
+[node name="Label" type="Label" parent="PotionTxt"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "Aperte \"c\" ou \"RB\" para curar
+ou
+Aperte \"d\" ou \"LB\" para restaurar mana"

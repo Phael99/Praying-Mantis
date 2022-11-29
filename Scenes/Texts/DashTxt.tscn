@@ -19,5 +19,5 @@ theme = SubResource( 2 )
 [node name="Label" type="Label" parent="."]
 margin_right = 40.0
 margin_bottom = 14.0
-text = "Aperte 's' ou 'B' 
+text = "Aperte 's' ou 'RT' 
 para usar Dash"

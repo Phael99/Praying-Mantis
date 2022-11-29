@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 var game_paused = false
-var health = 0
+var health : float = 3
 var mana : float = 3
 var potions
 # Called when the node enters the scene tree for the first time.
@@ -24,26 +24,11 @@ func _process(delta):
 
 
 func show_health():
-	if health == 3:
-		$HealthBar3.visible = true
-		$HealthBar2.visible = true
-		$HealthBar.visible = true
-	if health == 2:
-		$HealthBar3.visible = false
-		$HealthBar2.visible = true
-		$HealthBar.visible = true
-	if health == 1:
-		$HealthBar3.visible = false
-		$HealthBar2.visible = false
-		$HealthBar.visible = true
-	if health <= 0:
-		$HealthBar3.visible = false
-		$HealthBar2.visible = false
-		$HealthBar.visible = false
+	$HealthBar3.scale.x = health/3
 
 
 func show_mana():
-	$ManaBar.rect_scale.x = mana/3
+	$ManaBar.scale.x = mana/3
 
 func show_potions():
 	if potions == 0:

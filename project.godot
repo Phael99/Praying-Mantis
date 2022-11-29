@@ -44,6 +44,7 @@ settings/fps/force_fps=60
 
 window/size/height=576
 window/size/resizable=false
+window/size/fullscreen=true
 mouse_cursor/custom_image="res://Arrow_Blue.png"
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"

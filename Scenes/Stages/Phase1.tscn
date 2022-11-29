@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Scenes/Enviroment/TileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Tileset/background/background_layer_3.png" type="Texture" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://Scenes/Player/MagicPowerUp.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Scenes/Texts/Jump_atk.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Scenes/Texts/DashTxt.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/Texts/PotionTxt.tscn" type="PackedScene" id=21]
 
 [sub_resource type="Shader" id=2]
 code = "shader_type canvas_item;
@@ -71,6 +72,10 @@ tile_data = PoolIntArray( 262140, 2, 0, 262141, 2, 2, 262142, 2, 2, 262143, 2, 3
 [node name="Sign" parent="TileMap" instance=ExtResource( 7 )]
 position = Vector2( 4790, 432 )
 text = ExtResource( 20 )
+
+[node name="Sign2" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 3194, 433 )
+text = ExtResource( 21 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_ignore_camera_zoom = true
